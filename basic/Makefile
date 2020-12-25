@@ -17,6 +17,12 @@ build.elf: main.o startup.o linker.ld
 build.hex: build.elf
 	${PREFIX}objcopy -O ihex build.elf build.hex
 
+openocd:
+	/scratch/opt/openocd0100/bin/openocd \
+		-f interface/stlink-v2.cfg  \
+		-f target/nrf52.cfg  \
+		-c "telnet_port pipe; tcl_port disabled; gdb_port disabled; log_output /dev/null"
+
 .PHONY: clean
 
 clean:

@@ -5,7 +5,7 @@
 #define GPIO_OUTCLR (*((uint32_t*) (GPIO_BASE + 0x50C)))
 #define GPIO_PIN_CNF(pin) (*((uint32_t*) (GPIO_BASE + 0x700 + pin * 4)))
 
-unsigned int LED = 17;
+unsigned int LED = 13;
 
 int main()
 {
